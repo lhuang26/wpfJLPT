@@ -3,11 +3,41 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Data Entry">
     <Grid Margin="32">
-        <StackPanel MaxWidth="480" HorizontalAlignment="Left">
+        <StackPanel HorizontalAlignment="Stretch">
             <TextBlock Text="Data Entry"
                        FontSize="28"
                        FontWeight="Bold"
                        Margin="0,0,0,24" />
+
+            <Grid Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="Category"
+                           VerticalAlignment="Center" />
+                <WrapPanel Grid.Column="1">
+                    <CheckBox Content="Vocabulary" Margin="0,0,16,0" />
+                    <CheckBox Content="Kanji" Margin="0,0,16,0" />
+                    <CheckBox Content="Grammar" />
+                </WrapPanel>
+            </Grid>
+
+            <Grid Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="Entry"
+                           VerticalAlignment="Center" />
+                <TextBox x:Name="EntryTextBox"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         HorizontalAlignment="Stretch"
+                         Padding="8,5" />
+            </Grid>
 
             <TextBlock Text="Japanese word" Margin="0,0,0,6" />
             <TextBox x:Name="JapaneseWordTextBox"
