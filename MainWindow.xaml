@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfJLPT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="WpfJLPT" Height="500" Width="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Width="180" Background="#F3F4F6">
+            <TextBlock Text="WpfJLPT"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Margin="20,24,20,20" />
+            <Button Content="Review"
+                    Click="Review_Click"
+                    Margin="12,4"
+                    Padding="12,10" />
+            <Button Content="Data Entry"
+                    Click="DataEntry_Click"
+                    Margin="12,4"
+                    Padding="12,10" />
+        </StackPanel>
+        <Frame x:Name="PageFrame"
+               NavigationUIVisibility="Hidden" />
+    </DockPanel>
 </Window>

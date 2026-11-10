@@ -1,0 +1,42 @@
+﻿<Page x:Class="WpfJLPT.DataEntryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Data Entry">
+    <Grid Margin="32">
+        <StackPanel MaxWidth="480" HorizontalAlignment="Left">
+            <TextBlock Text="Data Entry"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0,0,0,24" />
+
+            <TextBlock Text="Japanese word" Margin="0,0,0,6" />
+            <TextBox x:Name="JapaneseWordTextBox"
+                     MinHeight="34"
+                     Margin="0,0,0,16"
+                     Padding="8,5" />
+
+            <TextBlock Text="Reading" Margin="0,0,0,6" />
+            <TextBox x:Name="ReadingTextBox"
+                     MinHeight="34"
+                     Margin="0,0,0,16"
+                     Padding="8,5" />
+
+            <TextBlock Text="Meaning" Margin="0,0,0,6" />
+            <TextBox x:Name="MeaningTextBox"
+                     MinHeight="34"
+                     Margin="0,0,0,16"
+                     Padding="8,5" />
+
+            <TextBlock Text="JLPT level" Margin="0,0,0,6" />
+            <ComboBox x:Name="JlptLevelComboBox"
+                      MinHeight="34"
+                      Padding="8,5">
+                <ComboBoxItem Content="N5" />
+                <ComboBoxItem Content="N4" />
+                <ComboBoxItem Content="N3" />
+                <ComboBoxItem Content="N2" />
+                <ComboBoxItem Content="N1" />
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>

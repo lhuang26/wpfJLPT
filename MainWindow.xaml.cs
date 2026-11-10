@@ -19,5 +19,16 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        PageFrame.Navigate(new ReviewPage());
+    }
+
+    private void Review_Click(object sender, RoutedEventArgs e)
+    {
+        PageFrame.Navigate(new ReviewPage());
+    }
+
+    private void DataEntry_Click(object sender, RoutedEventArgs e)
+    {
+        PageFrame.Navigate(new DataEntryPage());
     }
 }
