@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AzureSql\AzureSql.csproj" />
+    <ProjectReference Include="..\BusModule\BusModule.csproj" />
   </ItemGroup>
 
 </Project>

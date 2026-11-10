@@ -9,64 +9,127 @@
                        FontWeight="Bold"
                        Margin="0,0,0,24" />
 
-            <Grid Margin="0,0,0,16">
+            <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0"
-                           Text="Category"
-                           VerticalAlignment="Center" />
-                <WrapPanel Grid.Column="1">
-                    <CheckBox Content="Vocabulary" Margin="0,0,16,0" />
-                    <CheckBox Content="Kanji" Margin="0,0,16,0" />
-                    <CheckBox Content="Grammar" />
-                </WrapPanel>
-            </Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <Grid Margin="0,0,0,16">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0"
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Text="Category"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
+                <WrapPanel x:Name="CategoryCheckBoxPanel"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
                            Text="Entry"
-                           VerticalAlignment="Center" />
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
                 <TextBox x:Name="EntryTextBox"
+                         Grid.Row="1"
                          Grid.Column="1"
                          MinHeight="34"
                          HorizontalAlignment="Stretch"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Text="Meaning"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
+                <TextBox x:Name="MeaningTextBox"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Text="ひらがな"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
+                <TextBox x:Name="HiraganaTextBox"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="4"
+                           Grid.Column="0"
+                           Text="カタカナ"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
+                <TextBox x:Name="JapaneseWordTextBox"
+                         Grid.Row="4"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="5"
+                           Grid.Column="0"
+                           Text="Positive"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
+                <TextBox x:Name="PositiveTextBox"
+                         Grid.Row="5"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="6"
+                           Grid.Column="0"
+                           Text="Negative"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,16" />
+                <TextBox x:Name="NegativeTextBox"
+                         Grid.Row="6"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="7"
+                           Grid.Column="0"
+                           Text="Past"
+                           VerticalAlignment="Center" />
+                <TextBox x:Name="PastTextBox"
+                         Grid.Row="7"
+                         Grid.Column="1"
+                         MinHeight="34"
+                         Padding="8,5"
+                         Margin="0,0,0,16" />
+
+                <TextBlock Grid.Row="8"
+                           Grid.Column="0"
+                           Text="Past Neg"
+                           VerticalAlignment="Center" />
+                <TextBox x:Name="PastNegTextBox"
+                         Grid.Row="8"
+                         Grid.Column="1"
+                         MinHeight="34"
                          Padding="8,5" />
             </Grid>
-
-            <TextBlock Text="Japanese word" Margin="0,0,0,6" />
-            <TextBox x:Name="JapaneseWordTextBox"
-                     MinHeight="34"
-                     Margin="0,0,0,16"
-                     Padding="8,5" />
-
-            <TextBlock Text="Reading" Margin="0,0,0,6" />
-            <TextBox x:Name="ReadingTextBox"
-                     MinHeight="34"
-                     Margin="0,0,0,16"
-                     Padding="8,5" />
-
-            <TextBlock Text="Meaning" Margin="0,0,0,6" />
-            <TextBox x:Name="MeaningTextBox"
-                     MinHeight="34"
-                     Margin="0,0,0,16"
-                     Padding="8,5" />
-
-            <TextBlock Text="JLPT level" Margin="0,0,0,6" />
-            <ComboBox x:Name="JlptLevelComboBox"
-                      MinHeight="34"
-                      Padding="8,5">
-                <ComboBoxItem Content="N5" />
-                <ComboBoxItem Content="N4" />
-                <ComboBoxItem Content="N3" />
-                <ComboBoxItem Content="N2" />
-                <ComboBoxItem Content="N1" />
-            </ComboBox>
         </StackPanel>
     </Grid>
 </Page>
