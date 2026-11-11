@@ -18,6 +18,7 @@ public partial class ReviewPage : Page
     {
         try
         {
+            ReviewItemsComboBox.DisplayMemberPath = nameof(JlptCategory.Name);
             ReviewItemsComboBox.ItemsSource = await _categoryService.GetCategoriesAsync();
         }
         catch (Exception exception)

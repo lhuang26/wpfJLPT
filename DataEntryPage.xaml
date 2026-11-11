@@ -14,10 +14,12 @@
                            FontSize="28"
                            FontWeight="Bold"
                            VerticalAlignment="Center" />
-                <Button Grid.Column="1"
+                <Button x:Name="SubmitButton"
+                        Grid.Column="1"
                         Content="Submit"
                         MinWidth="100"
-                        Padding="16,8" />
+                        Padding="16,8"
+                        Click="SubmitButton_Click" />
             </Grid>
 
             <Grid>
@@ -56,6 +58,7 @@
                          Grid.Row="1"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="128"
                          HorizontalAlignment="Stretch"
                          Padding="8,5"
                          Margin="0,0,0,16" />
@@ -69,6 +72,7 @@
                          Grid.Row="2"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="512"
                          Padding="8,5"
                          Margin="0,0,0,16" />
 
@@ -81,6 +85,7 @@
                          Grid.Row="3"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="32"
                          Padding="8,5"
                          Margin="0,0,0,16" />
 
@@ -89,10 +94,11 @@
                            Text="カタカナ"
                            VerticalAlignment="Center"
                            Margin="0,0,0,16" />
-                <TextBox x:Name="JapaneseWordTextBox"
+                <TextBox x:Name="KatakanaTextBox"
                          Grid.Row="4"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="32"
                          Padding="8,5"
                          Margin="0,0,0,16" />
 
@@ -105,6 +111,7 @@
                          Grid.Row="5"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="32"
                          Padding="8,5"
                          Margin="0,0,0,16" />
 
@@ -117,6 +124,7 @@
                          Grid.Row="6"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="32"
                          Padding="8,5"
                          Margin="0,0,0,16" />
 
@@ -128,6 +136,7 @@
                          Grid.Row="7"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="32"
                          Padding="8,5"
                          Margin="0,0,0,16" />
 
@@ -139,6 +148,7 @@
                          Grid.Row="8"
                          Grid.Column="1"
                          MinHeight="34"
+                         MaxLength="32"
                          Padding="8,5" />
             </Grid>
         </StackPanel>
