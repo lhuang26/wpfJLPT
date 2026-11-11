@@ -23,12 +23,13 @@ public partial class ReviewPage : Page
             ReviewItemsComboBox.DisplayMemberPath = nameof(JlptCategory.Name);
             ReviewItemsComboBox.SelectedValuePath = nameof(JlptCategory.Id);
             _isLoadingCategories = true;
-            ReviewItemsComboBox.ItemsSource = await _categoryService.GetCategoriesAsync();
-            ReviewItemsComboBox.SelectedValue = 7;
-
-            if (ReviewItemsComboBox.SelectedValue is int categoryId)
+            var categories = await _categoryService.GetCategoriesAsync();
+            ReviewItemsComboBox.ItemsSource = categories;
+            var defaultCategory = categories.FirstOrDefault(category => category.Id == 7);
+            if (defaultCategory is not null)
             {
-                await LoadReviewEntryAsync(categoryId);
+                ReviewItemsComboBox.SelectedItem = defaultCategory;
+                await LoadReviewEntryAsync(defaultCategory.Id);
             }
             else
             {
@@ -68,24 +69,17 @@ public partial class ReviewPage : Page
             if (entries.Count == 0)
             {
                 ReviewItemTextBlock.Text = string.Empty;
-                ReviewTextDisplay.Text = "No JLPT entries found for this category.";
+                ReviewTextDisplay.Clear();
                 return;
             }
 
             var entry = entries[0];
             ReviewItemTextBlock.Text = entry.Entry;
-            ReviewTextDisplay.Text =
-                $"Entry: {entry.Entry}{Environment.NewLine}" +
-                $"Meaning: {entry.Meaning}{Environment.NewLine}" +
-                $"Hiragana: {entry.Hiragana}{Environment.NewLine}" +
-                $"Katakana: {entry.Katakana}{Environment.NewLine}" +
-                $"Positive: {entry.Positive}{Environment.NewLine}" +
-                $"Negative: {entry.Negative}{Environment.NewLine}" +
-                $"Past Positive: {entry.PastPositive}{Environment.NewLine}" +
-                $"Past Negative: {entry.PastNegative}";
+            ReviewTextDisplay.Clear();
         }
         catch (Exception exception)
         {
+            ReviewItemTextBlock.Text = string.Empty;
             MessageBox.Show(
                 $"Could not load JLPT entries: {exception.Message}",
                 "Entry Load Error",
