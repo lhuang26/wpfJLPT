@@ -27,30 +27,62 @@
                        Grid.Column="1"
                        VerticalAlignment="Center"
                        Margin="12,0" />
-            <Button Content="Refresh"
+            <Button x:Name="RefreshButton"
+                    Content="Refresh"
                     Grid.Column="3"
                     MinWidth="90"
                     Margin="8,0,0,0"
-                    Padding="12,8" />
-            <Button Content="Pass"
+                    Padding="12,8"
+                    Click="RefreshButton_Click" />
+            <Button x:Name="PassButton"
+                    Content="Pass"
                     Grid.Column="2"
                     MinWidth="90"
                     Margin="8,0,0,0"
-                    Padding="12,8" />
+                    Padding="12,8"
+                    Click="PassButton_Click" />
             <Button Content="View"
                     Grid.Column="4"
                     MinWidth="90"
                     Margin="8,0,0,0"
-                    Padding="12,8" />
+                    Padding="12,8"
+                    Click="ViewButton_Click" />
         </Grid>
 
-        <TextBox x:Name="ReviewTextDisplay"
-                 Grid.Row="1"
-                 IsReadOnly="True"
-                 AcceptsReturn="True"
-                 TextWrapping="Wrap"
-                 VerticalScrollBarVisibility="Auto"
-                 HorizontalScrollBarVisibility="Disabled"
-                 Padding="12" />
+        <Grid x:Name="ReviewDetailsGrid"
+              Grid.Row="1"
+              Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Entry:" Margin="0,0,16,8" />
+            <TextBlock x:Name="EntryValueTextBlock" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="1" Text="Meaning:" Margin="0,0,16,8" />
+            <TextBlock x:Name="MeaningValueTextBlock" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="2" Text="Hiragana:" Margin="0,0,16,8" />
+            <TextBlock x:Name="HiraganaValueTextBlock" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="3" Text="Katakana:" Margin="0,0,16,8" />
+            <TextBlock x:Name="KatakanaValueTextBlock" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="4" Text="Positive:" Margin="0,0,16,8" />
+            <TextBlock x:Name="PositiveValueTextBlock" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="5" Text="Negative:" Margin="0,0,16,8" />
+            <TextBlock x:Name="NegativeValueTextBlock" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="6" Text="Past Positive:" Margin="0,0,16,8" />
+            <TextBlock x:Name="PastPositiveValueTextBlock" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+            <TextBlock Grid.Row="7" Text="Past Negative:" Margin="0,0,16,8" />
+            <TextBlock x:Name="PastNegativeValueTextBlock" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,8" />
+        </Grid>
     </Grid>
 </Page>
