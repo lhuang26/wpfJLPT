@@ -1,12 +1,11 @@
-﻿using BusModule;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfJLPT;
 
 public partial class DataEntryPage : Page
 {
-    private readonly JlptCat _categoryService = new();
+    private readonly JlptApiClient _categoryService = new();
 
     public DataEntryPage()
     {

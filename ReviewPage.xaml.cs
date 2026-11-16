@@ -1,12 +1,11 @@
-﻿using BusModule;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfJLPT;
 
 public partial class ReviewPage : Page
 {
-    private readonly JlptCat _categoryService = new();
+    private readonly JlptApiClient _categoryService = new();
     private bool _isLoadingCategories;
     private JlptEntry? _selectedEntry;
 
